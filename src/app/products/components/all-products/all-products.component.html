@@ -1,0 +1,16 @@
+<app-spinner *ngIf="loading"></app-spinner>
+<div class="div" *ngIf="!loading">
+  <div class="my-2" >
+    <label for="" class="mx-2 my-2 fs-5 fw-bolder">Categories : </label>
+    <select class="form-control w-25" (change)="filterProducts($event)">
+        <option value="All" selected >All</option>
+        <option class="text-capitalize" value="{{category}}" *ngFor="let category of categories ; let i = index" value="">{{category}}</option>
+    </select>
+</div>
+<div class="row">
+  <div *ngFor="let product of products" class="col-lg-3 col-md-4 col-sm-6 pb-1" >
+  <app-item [product]="product" (item)="addToCart($event)"></app-item>
+</div>  
+</div>  
+</div>
+

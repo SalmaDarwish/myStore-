@@ -1,0 +1,28 @@
+<div class="product-item  my-4 d-flex flex-column justify-content-between">
+    <div class="product-img position-relative overflow-hidden">
+        <div class="image">
+            <img class="w-100" [src]="product.image" alt="" >
+
+        </div>
+        <div class="product-action">
+            <a *ngIf="!addButton" (click)="addButton=true"  class="btn btn-outline-dark btn-square fs-3"><i class="fa fa-shopping-cart"></i></a>
+            <div *ngIf="addButton" class="d-flex justify-content-center">
+                <input min="1" type="number" class="form-control w-25" [(ngModel)]="amount">
+                <button class="btn btn-danger"  (click)="add()">Add</button>
+            </div>
+            
+        </div>
+    </div>
+    <div class="text-center py-4 product-data bg-light pointer" [routerLink]="['/details/',product.id]" >
+        <h4 class="h6 text-decoration-none text-truncate px-2">{{product.title }}</h4>
+        <p>{{product.description | slice:0:50}}</p>
+        <div class="d-flex align-items-center justify-content-center mt-2">
+            <h5>{{product.price}}$</h5>
+        </div>
+        <div class="d-flex align-items-center justify-content-center mb-1">
+            <small class=" text-primary mr-1"> ({{product.rating.rate}}) </small>
+    
+            <small> {{product.rating.count}}</small>
+        </div>
+    </div>
+</div>

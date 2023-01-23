@@ -1,0 +1,60 @@
+@import "../../../../scss/_varibales.scss";
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 0;
+    top: 50%;
+    left:50%;
+    border-top: 1px dashed lighten($dark, 50%);
+    z-index: -1;
+}
+
+.product-offer {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-offer img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.product-offer:hover img {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.product-offer .offer-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(61, 70, 77, .5);
+    z-index: 1;
+}
+
+.cat-item {
+    background: $light;
+    transition: .5s;
+}
+
+.cat-item:hover {
+    background: $primary;
+}
+
+.cat-item img {
+    transition: .5s;
+}
+
+.cat-item:hover img {
+    transform: scale(1.2) rotate(5deg);
+}
